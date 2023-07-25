@@ -207,13 +207,11 @@ gitea_update_conf_file() {
     gitea_conf_set "server" "SSH_PORT" "$GITEA_SSH_PORT"
     gitea_conf_set "server" "SSH_LISTEN_PORT" "$GITEA_SSH_LISTEN_PORT"
     gitea_conf_set "server" "HTTP_PORT" "$GITEA_HTTP_PORT"
-    gitea_conf_set "queue" "CONN_STR" "$GITEA_QUEUE_CONN_STR"
-    gitea_conf_set "queue" "TYPE" "$GITEA_QUEUE_TYPE"
-    gitea_conf_set "indexer" "ISSUE_INDEXER_TYPE" "$GITEA_ISSUE_INDEXER_TYPE"
-    gitea_conf_set "session" "PROVIDER" "$GITEA_SESSION_PROVIDER"
     gitea_conf_set "log" "ROOT_PATH" "$GITEA_LOG_ROOT_PATH"
     gitea_conf_set "repository" "ROOT" "$GITEA_REPO_ROOT_PATH"
     gitea_conf_set "security" "PASSWORD_HASH_ALGO" "$GITEA_PASSWORD_HASH_ALGO"
+    gitea_conf_set "service" "DISABLE_REGISTRATION" "$GITEA_DISABLE_REGISTRATION"
+    gitea_conf_set "service" "SHOW_REGISTRATION_BUTTON" "$GITEA_SHOW_REGISTRATION_BUTTON"
 
     gitea_conf_set "mailer" "ENABLED" "$GITEA_SMTP_ENABLED"
     is_empty_value "$GITEA_SMTP_HOST" || gitea_conf_set "mailer" "HOST" "$GITEA_SMTP_HOST"
@@ -289,11 +287,6 @@ gitea_pass_wizard() {
         "--data-urlencode" "http_port=${GITEA_HTTP_PORT}"
         "--data-urlencode" "app_url=${GITEA_ROOT_URL}"
         "--data-urlencode" "log_root_path=${GITEA_LOG_ROOT_PATH}"
-        "--data-urlencode" "queue_conn_str=${GITEA_QUEUE_CONN_STR}"
-        "--data-urlencode" "queue_type=${GITEA_QUEUE_TYPE}"
-        "--data-urlencode" "issue_indexer_type=${GITEA_ISSUE_INDEXER_TYPE}"
-        "--data-urlencode" "session_provider=${GITEA_SESSION_PROVIDER}"
-        
 
         "--data-urlencode" "password_algorithm=${GITEA_PASSWORD_HASH_ALGO}"
         "--data-urlencode" "admin_name=${GITEA_ADMIN_USER}"
