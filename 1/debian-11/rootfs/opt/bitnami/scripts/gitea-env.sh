@@ -59,6 +59,7 @@ gitea_env_vars=(
     GITEA_SMTP_PASSWORD
     GITEA_DISABLE_REGISTRATION
     GITEA_SHOW_REGISTRATION_BUTTON
+    GITEA_REQUIRE_SIGNIN_VIEW
 )
 for env_var in "${gitea_env_vars[@]}"; do
     file_env_var="${env_var}_FILE"
