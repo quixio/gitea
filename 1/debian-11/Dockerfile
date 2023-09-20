@@ -1,7 +1,7 @@
 # Copyright VMware, Inc.
 # SPDX-License-Identifier: APACHE-2.0
 
-FROM docker.io/bitnami/minideb:bullseye
+FROM --platform=linux/amd64 docker.io/bitnami/minideb:bullseye
 
 ARG TARGETARCH
 
