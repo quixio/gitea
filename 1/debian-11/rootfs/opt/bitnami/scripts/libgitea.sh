@@ -207,14 +207,14 @@ gitea_update_conf_file() {
     gitea_conf_set "server" "SSH_PORT" "$GITEA_SSH_PORT"
     gitea_conf_set "server" "SSH_LISTEN_PORT" "$GITEA_SSH_LISTEN_PORT"
     gitea_conf_set "server" "HTTP_PORT" "$GITEA_HTTP_PORT"
-    gitea_conf_set "server" "MINIMUM_KEY_SIZE_CHECK" "$GITEA_MINIMUM_KEY_SIZE_CHECK"
     gitea_conf_set "log" "ROOT_PATH" "$GITEA_LOG_ROOT_PATH"
     gitea_conf_set "repository" "ROOT" "$GITEA_REPO_ROOT_PATH"
     gitea_conf_set "security" "PASSWORD_HASH_ALGO" "$GITEA_PASSWORD_HASH_ALGO"
     gitea_conf_set "service" "DISABLE_REGISTRATION" "$GITEA_DISABLE_REGISTRATION"
     gitea_conf_set "service" "SHOW_REGISTRATION_BUTTON" "$GITEA_SHOW_REGISTRATION_BUTTON"
     gitea_conf_set "service" "REQUIRE_SIGNIN_VIEW" "$GITEA_REQUIRE_SIGNIN_VIEW"
-
+    gitea_conf_set "server" "MINIMUM_KEY_SIZE_CHECK" "$GITEA_MINIMUM_KEY_SIZE_CHECK"
+    
     gitea_conf_set "mailer" "ENABLED" "$GITEA_SMTP_ENABLED"
     is_empty_value "$GITEA_SMTP_HOST" || gitea_conf_set "mailer" "HOST" "$GITEA_SMTP_HOST"
     is_empty_value "$GITEA_SMTP_FROM" || gitea_conf_set "mailer" "FROM" "$GITEA_SMTP_FROM"
